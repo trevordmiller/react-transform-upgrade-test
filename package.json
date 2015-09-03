@@ -8,59 +8,38 @@
   },
   "author": "Trevor D. Miller <trevordmiller@icloud.com> (www.trevordmiller.com)",
   "license": "MIT",
-  "keywords": [
-  ],
-  
-  
+  "keywords": [],
   "main": "dist/bundle.js",
-  
   "scripts": {
-    
-    "lint": "eslint src webpack.config.js",
-    
-    
+    "lint": "eslint src webpack.config.js server.js",
     "test": "mocha src/**/*.test.js --compilers js:babel/register",
     "test:watch": "npm test -- -w",
-    
-    
-    
     "build": "webpack",
-    "dev": "webpack-dev-server",
-    
+    "start": "node server.js",
     "prepublish": "npm run lint && npm test && npm run build"
   },
-  
   "pre-commit": [
-    
     "lint",
     "test"
-    
-    
-    
   ],
-  
   "dependencies": {
+    "express": "^4.13.3"
   },
   "devDependencies": {
-    
     "pre-commit": "1.x.x",
-    
-    
     "mocha": "2.x.x",
-    
-    
     "eslint": "1.x.x",
-    
-    
     "eslint-plugin-react": "3.x.x",
     "babel-core": "5.x.x",
     "babel-loader": "5.x.x",
     "react": "0.13.x",
-    "react-hot-loader": "1.x.x",
     "file-loader": "0.8.x",
     "webpack": "1.x.x",
-    "webpack-dev-server": "1.x.x",
-    
-    "babel": "5.x.x"
+    "babel-plugin-react-transform": "^1.0.1",
+    "react-transform-catch-errors": "^0.1.1",
+    "react-transform-webpack-hmr": "^0.1.2",
+    "redbox-react": "^1.0.1",
+    "webpack-dev-middleware": "^1.2.0",
+    "webpack-hot-middleware": "^2.0.0"
   }
 }
